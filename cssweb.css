@@ -1,0 +1,386 @@
+body { /* Removing white space around the page */
+    margin: 0;
+}
+
+#page {/* Dividing the page into two columns the sidebar on the left and the content on the right */
+    display: grid;
+    position: fixed;
+    grid-template-columns: 20% 80%; /* the sidebar has 1/4 width of the content on the right, the content has 4/5 width of the whole page*/
+    height: 100%; /* takes the full height of the page */
+    font-family: Verdana, Geneva, Tahoma, sans-serif 
+}
+
+.sidebar {/* the sidebar is displayed as a grid with a navbar and footer as descendent rows */
+    display: grid;
+    min-width: 100%;
+    grid-template-rows: 90% 10%; /* navbar takes 90% of the height of the sidebar while the footer takes 10% only */
+    place-items: center; /* Centering descendent items vertically */
+    background-color: black;
+    height: 100%;
+}
+
+.innerPage {
+    min-width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll; /* Make the whole page scrollable vertically */
+}
+
+footer {
+    height: 100%;
+    min-width: 100%;
+    text-align: center;
+    vertical-align: middle; /* Align text inside the footer in the center vertically */
+    background-color: #60abd3;
+}
+
+footer p {
+    line-height: 70px; /* Specifying the line height for text inside the paragraph present in the footer */
+    margin: 0;
+}
+
+.navbar {
+    min-width: 100%;
+}
+
+.PagesList {/* Unordered list which holds the icons of the navbar and it's clickable text */
+    text-align: left;
+    padding-left: 4px;
+    width: 100%;
+    margin-bottom: 50%; /* Setting the bottom margin for the ul to avoid the last element from overlapping with the footer. */
+    display: grid; /* Holding the navbar lists as rows */
+    grid-template-rows: 10%;
+    height: 100%;
+    grid-gap: 10%;
+}
+
+li {
+    list-style-type: none; /* Removing ul dots */
+}
+
+.pagesAnchor {
+    text-decoration: none; /*Removing underline in anchor tags*/
+    color: white;
+    line-height: 1%;
+}
+
+.PagesList li:hover {
+    background-color: #a48484; /* Changing the background color when hovering over list item*/
+    transition: 0.3s; /* Adding 0.3 seconds transition delay upon hovering */
+    filter: invert(); /* Inverting the background upon hovering with cursor*/
+}
+
+.social_media_icons {/* Adjust the properties of the social media icons inside the sidebar on the left */
+    padding: 1% 1%;
+    width: 70%;
+    height: 70%;
+    border-radius: 10%; /* Making the social media icon circular */
+    transition: 0.3s;
+}
+
+.social_media_icons:hover {/* Adding transition upon hovering on social media icons */
+    width: 100%;
+    height: 100%;
+    padding: 1% 1%;
+    border-radius: 90%;
+    background-color: #21a4d8;
+}
+.social_media {/*Ul displayed as a grid and holds social media icons as columns with equal width*/
+    text-align: center;
+    margin: 10% 0% 0% 0%;
+    padding: 0%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+li .icon {/* Properties for icons of the navbar in the left */
+    background: #21a4d8;
+    width: 15%;
+    height: 80%;
+    display: inline-block;
+    border-radius: 100%;
+}
+
+.profile_image {/* Properties for the profile image in the sidebar */
+    outline: red 2px solid;
+    margin: 0 auto;
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+#Cover {/* width & height of the cover image in the inner page */
+    width: 100%;
+    height: 100%;
+}
+#Home /* Removing the margins for the cover image in the 'inner page' */
+{
+    margin: 0%;
+}
+
+.icon {/* Setting the icons in the middle vertically with padding 1% */
+    vertical-align: middle;
+    padding: 1%;
+}
+
+article { /* Setting the article margins for all sides */
+    margin: 5%;
+}
+
+h2 {/* Removing margins for h2 in all sides */
+    margin: 0;
+}
+
+.about_content {
+    display: grid;
+    padding: 0%;
+    margin: 0%;
+    height: auto;
+    /* To get rid of the blank space between the about article and Resume article especially in media queries i.e. different screen sizes*/
+    width: 100%;
+    grid-template-columns: 1fr 2fr;
+}
+
+.info {/* Sets the properties of the blue arrow icons in the 'about_page' to be displayed next to the info */
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    align-items: center;
+    margin: 1% 0%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.profile_image_about {/* Sets the properties of the profile image in the 'about_page' */
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+}
+
+div.rightCol {/* Sets the left padding of the right column in 'about_page' to be 0 next to the profile image*/
+    padding-left: 0%;
+}
+
+.skills {/* Display the skills into two columns since they are presented in two sets of 3 skills each. */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10%;
+}
+
+.about_contd {
+    background-color: #f5f8fd;
+}
+
+ul.about_page {
+    padding: 0;
+    display: table;
+}
+
+.arrow_icon {
+    margin: 0% 0%;
+    padding: 0;
+    width: 8%;
+    color: blue;
+    float: left;
+}
+
+.leftConCol {
+    min-width: 50%;
+}
+
+.rightConCol,
+input {
+    height: auto;
+    width: auto;
+}
+
+.contact_section {
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    height: auto;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact_info_ul {
+    padding: 0%;
+    margin: 0%;
+}
+
+.contact_icons {
+    width: 30%;
+    float: left;
+    border-radius: 10%;
+    transition: 0.3s;
+}
+
+li:hover .contact_icons {
+    border-radius: 90%;
+    filter: invert();
+    background-color: #21a4d8;
+}
+
+.contact_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact_info div h5,
+h2 {
+    display: flex;
+    align-items: center;
+}
+
+.contact_me {
+    height: 100%;
+    width: 100%;
+}
+
+form {
+    height: 100%;
+    width: 100%;
+}
+
+.inputs {
+    margin-bottom: 10%;
+    width: 80%;
+    height: 5%;
+}
+
+.map,
+iframe {
+    margin-top: 20%;
+    display: inline-block;
+    height: auto;
+    width: auto;
+}
+
+#message {
+    height: 10%;
+    width: 70%;
+}
+
+.date {
+    background-color: #e4edf9;
+    padding: 2%;
+    margin: 0%;
+    text-align: center;
+    display: inline-block;
+}
+
+/* TimeLine*/
+ul.timeline {
+    position: relative;
+}
+
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+}
+
+ul.timeline>li {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+ul.timeline>li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.container.mt-5.mb-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*End of timeline*/
+
+@media screen and (min-width:240px) and (max-width:992px) {/* Apply properties for devices with screen width between 240px up to 992 px otherwise retain the original aspect ratio of the page as above */
+
+    body,
+    h1,
+    h2 {
+        font-size: 60%;
+    }
+
+    article {
+        margin-left: 1px;
+    }
+
+    #Cover {
+        height: 20%;
+        /* Minimizing the size of the cover image in the home section */
+        width: 100%;
+    }
+
+    div.col1,
+    div.col2 {
+        font-size: 7px;
+        /* Sets the font size to 10px for the timeline */
+    }
+
+    ul.timeline::before {
+        left: 9px;
+        /* Getting rid of the left padding to the text in the timeline */
+    }
+
+    ul.timeline>li,
+    ul.timeline {
+        margin: 20px 5px;
+        padding-left: 10px;
+    }
+
+    ul.timeline>li:before {
+        content: ' ';
+        background: white;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        border: 3px solid #22c0e8;
+        left: 0px;
+        width: 20px;
+        height: 20px;
+    }
+
+    div.leftCol {
+        width: auto;
+    }
+
+    .profile_image {
+        width: 50%;
+        height: 50%;
+    }
+
+    .social_media_icons {
+        width: 20%;
+        height: 20%;
+    }
+
+    .leftCol {
+        width: 100%;
+        height: 100%;
+    }
+
+    .profile_image_about {
+        width: 100%;
+        height: auto;
+    }
+
+    .pagesAnchor {
+        font-size: 60%;
+    }
+    
+}
